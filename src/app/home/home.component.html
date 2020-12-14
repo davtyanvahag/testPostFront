@@ -1,0 +1,20 @@
+<div class="container">
+  <div class="row mt-5">
+    <h3><b>Search Post</b></h3>
+  </div>
+  <div class="row mt-3">
+    <div class="col-12">
+      <div class="form-group w-50 m-auto">
+        <label for="id" [ngClass]="errorId ? 'text-danger' : ''">ID</label>
+        <input type="number" min="1" [(ngModel)]="id" id="id" class="form-control">
+        <p class="text-danger" *ngIf="errorId">{{errorIdMessage}}</p>
+      </div>
+      <div class="form-group text-center mt-3">
+        <button class="btn btn-primary" (click)="search()">Search</button>
+      </div>
+    </div>
+  </div>
+  <div class="row mt-4">
+    <h2 class="text-danger" *ngIf="responseError">{{responseErrorMessage}}</h2>
+  </div>
+</div>
